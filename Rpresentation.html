@@ -797,9 +797,21 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="default">
-<h3>Introduction</h3>
+<h3>Data Inputs</h3>
 <div class="slideContent code1" >
-<p>This aplication allows you to download and tranform historical data for a specific stock, plot it and add linear and non-linear smooths. Data is sourced from Yahoo finance</p>
+<p>This aplication allows you to download and tranform historical data for a specific stock, plot it and add linear and non-linear smooths. Data is sourced from Yahoo finance.</p>
+
+<p>symbol</p>
+
+<p>Lookup the stock ticker symbol for any company on one of the big stock exchanges and enter it into the relevant text box.</p>
+
+<p>date range</p>
+
+<p>The date range picker widget creates a dropdown menu from which a user can select a range of dates. Date range picker can take a regular input element like this: 2014-10-26</p>
+
+<p>periodicity / time scale</p>
+
+<p>Often, and especially with higher frequency data, it is necessary to aggregate data into lower frequency terms. For example, take daily data and convert it to weekly data. </p>
 
 </div>
 
@@ -810,7 +822,7 @@ hljs.initHighlightingOnLoad();
 <p>In data analysis transformation is the replacement of a variable by a
 function of that variable: for example replacing a stock&#39;s Closing price (Close) by the square root of Close or the logarithm of Close. In a stronger sense, a transformation is a replacement that changes the shape of a distribution or relationship.</p>
 
-<p>Types of transformations:</p>
+<p>Types of transformations available:</p>
 
 <ul>
 <li>linear regression</li>
@@ -828,7 +840,7 @@ function of that variable: for example replacing a stock&#39;s Closing price (Cl
 <div class="slideContent" >
 <p>Although points and lines of raw data can be helpful for exploring and understanding data, it can be difficult to tell what the overall trend or patterns are. Adding smooths can make it much easier to see. </p>
 
-<p>Types of smooths: </p>
+<p>Types of smooths available: </p>
 
 <ul>
 <li>linear regression</li>
@@ -845,7 +857,7 @@ function of that variable: for example replacing a stock&#39;s Closing price (Cl
 <section data-transition="default" data-transition-speed="default">
 <h3>Example: Slide With Code</h3>
 <div class="mediaInline slideContent" >
-<p>Next&#39;s page code chunk returns the Closing price for Barclays (symbol:BARC.L) stock between 26-Oct-2012 and today&#39;s date and renders a plot as an image.The green line represents the Closing price while the red line represents the 40 period linear filter (moving average). Smoothing can used to reduce irregularities (random fluctuations) in the time series and provide a clearer view of the true underlying behaviour of the series.</p>
+<p>The following code chunk returns the Closing price for Barclays (symbol:BARC.L) stock between 26-Oct-2012 and today&#39;s date and renders a plot as an image.The green line represents the Closing price while the red line represents the 40 days linear filter (moving average). As can been seen from the below figure, smoothing can be used to reduce irregularities (random fluctuations) in the time series and provide a clearer view of the true underlying behaviour of the series.</p>
 
 <pre><code class="r">library(quantmod)
 data &lt;- getSymbols(Symbols=&quot;BARC.L&quot;, src = &quot;yahoo&quot;, from =as.character(&#39;2012-10-26&#39;),to = as.character(Sys.Date()),auto.assign = FALSE)
